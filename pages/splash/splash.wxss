@@ -1,0 +1,24 @@
+.head-icon{
+  width: 200rpx;
+  height: 200rpx;
+  margin-top: 160rpx;
+}
+.spalsh-content{
+  margin-top: 100rpx;
+  font : block 13px/20px 'microsoft yahei';
+  color :#405f80;
+}
+.spalsh-start{
+  margin-top: 200rpx;
+  font-family : 'microsoft yahei';
+  font-size: 15px;
+  color :#405f80;
+}
+.start-border{
+  margin-top: 200rpx;
+  border: 1px solid #405f80;
+  width: 200rpx;
+  height: 80rpx;
+  text-align: center;
+  line-height: 80rpx;
+}
