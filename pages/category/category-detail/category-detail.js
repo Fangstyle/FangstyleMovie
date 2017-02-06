@@ -50,6 +50,9 @@ Page({
         var detailLocalStorgeList = wx.getStorageSync('detail_collected_list_storage');
         var  isCollected = detailLocalStorgeList[index];
         detailLocalStorgeList[index] = !isCollected;
+        this.setData({
+            collected: !isCollected
+        })
         wx.setStorageSync('detail_collected_list_storage', detailLocalStorgeList);
     }
 });
