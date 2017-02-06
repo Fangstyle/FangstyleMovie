@@ -1,7 +1,7 @@
 <view class="container">
-    <image src="/image/head.png" class="head-icon"></image>
+    <image src="/images/head.png" class="head-icon"></image>
     <text class="spalsh-content">Hello,2017!</text>
-    <view class ="start-border">
+    <view class ="start-border" bindtap="onEnters">
         <text class="spalsh-start">开启2017之旅</text>
     </view>
 </view>

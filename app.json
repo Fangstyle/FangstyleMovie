@@ -1,5 +1,6 @@
 {
   "pages":[
+    "pages/category/category",
     "pages/splash/splash"
   ],
   "window":{
