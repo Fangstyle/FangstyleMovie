@@ -1,6 +1,6 @@
 Page({
     onEnters:function (event) {
-      wx.navigateTo({
+      wx.redirectTo({
       url: "../category/category"
     })
     },

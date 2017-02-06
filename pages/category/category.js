@@ -15,5 +15,12 @@ Page({
         this.setData({
             postList:postsData.postList
         });
+    },
+    toDetail:function (event) {
+        var intentId = event.currentTarget.dataset.detailIntentId;
+        console.log(intentId);
+        wx.navigateTo({
+            url: 'category-detail/category-detail'
+        })
     }
 });
