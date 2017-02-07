@@ -1,6 +1,6 @@
 Page({
     onEnters:function (event) {
-      wx.redirectTo({
+      wx.switchTab({
       url: "../category/category"
     })
     },

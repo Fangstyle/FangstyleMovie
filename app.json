@@ -1,13 +1,37 @@
 {
-  "pages":[
+  "pages": [
     "pages/splash/splash",
     "pages/category/category",
-    "pages/category/category-detail/category-detail"
+    "pages/category/category-detail/category-detail",
+    "pages/movie/movie",
+    "pages/movie/star-template/star-template",
+    "pages/movie/movie-item-template/movie-item-template",
+    "pages/movie/movie-template/movie-template"
   ],
-  "window":{
-    "backgroundTextStyle":"light",
+  "window": {
+    "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fff",
     "navigationBarTitleText": "WeChat",
-    "navigationBarTextStyle":"black"
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "list": [
+      {
+        "color":"#333",
+        "selectedColor":"#1F4BA5",
+        "iconPath":"images/tab/ciwei.png",
+        "selectedIconPath":"images/tab/ciwei_hl.png",
+        "pagePath": "pages/category/category",
+        "text": "首页"
+      },
+      {
+        "color":"#333",
+        "selectedColor":"#1F4BA5",
+        "iconPath":"images/tab/yuedu.png",
+        "selectedIconPath":"images/tab/yuedu_hl.png",
+        "pagePath": "pages/movie/movie",
+        "text": "电影"
+      }
+    ]
   }
 }

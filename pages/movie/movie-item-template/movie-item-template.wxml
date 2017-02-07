@@ -1,0 +1,9 @@
+<!--pages/movie/movie-item-template/movie-item-template.wxml-->
+<import src="../star-template/star-template.wxml" />
+<template name="movie_item">
+<view class="movie-container">
+    <image class="movie-img"></image>
+    <text class="movie-title">海的女儿</text>
+    <template is="movie_star"></template>
+</view>
+</template>

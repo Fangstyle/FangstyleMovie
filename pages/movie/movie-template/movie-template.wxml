@@ -1,0 +1,13 @@
+<!--pages/movie/movie-template/movie-template.wxml-->
+<import src="../movie-item-template/movie-item-template.wxml" />
+<template name="movie_collection">
+    <view>
+        <view>
+            <text>更多></text>
+            <text class="title">正在热情</text>
+        </view>
+        <template is="movie_item"></template>
+        <template is="movie_item"></template>
+        <template is="movie_item"></template>
+    </view>
+</template>

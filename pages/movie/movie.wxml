@@ -1,0 +1,8 @@
+<!--pages/movie/movie.wxml-->
+<import src="movie-template/movie-template.wxml" />
+<view>
+    <text>pages/movie/movie.wxml</text>
+    <template is="movie_collection"></template>
+</view>
+
+
