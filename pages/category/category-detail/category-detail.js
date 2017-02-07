@@ -23,7 +23,7 @@ Page({
         }
     },
     data:{
-
+        isPlayingMusic:false
     },
     onShareTap:function () {
         var itemList = ['分享到微信好友', '分享到QQ好友', '分享到朋友圈','分享到QQ空间'];
@@ -54,5 +54,22 @@ Page({
             collected: !isCollected
         })
         wx.setStorageSync('detail_collected_list_storage', detailLocalStorgeList);
+    },
+    onMediaPlay:function(){
+        var index = this.data.currentId;
+        var musicJson = postsData.postList[index].music;
+        var isPlayingMusic = !(this.data.isPlayingMusic);
+        if(isPlayingMusic){
+            wx.playBackgroundAudio({
+                dataUrl: musicJson.url,
+                title:  musicJson.title,
+                coverImgUrl: musicJson.coverImg
+            })
+        }else{
+            wx.pauseBackgroundAudio();
+        }
+        this.setData({
+            isPlayingMusic:isPlayingMusic
+        })
     }
 });
