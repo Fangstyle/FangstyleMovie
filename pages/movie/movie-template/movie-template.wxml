@@ -1,13 +1,20 @@
 <!--pages/movie/movie-template/movie-template.wxml-->
-<import src="../movie-item-template/movie-item-template.wxml" />
+<import src="../movie-item-template/movie-item-template.wxml"/>
 <template name="movie_collection">
-    <view>
-        <view>
-            <text>更多></text>
-            <text class="title">正在热情</text>
+    <view class="movie-list-container">
+        <view class="inner-container">
+            <view class="movie-head">
+                <text class="slogan">正在热映</text>
+                <view catchtap="onMoreTap" class="more" data-category="{{categoryTitle}}">
+                    <text class="more-text">更多</text>
+                    <image class="more-img" src="/images/icon/arrow-right.png"></image>
+                </view>
+            </view>
+            <view class="movies-container">
+                <template is="movie_item"></template>
+                <template is="movie_item"></template>
+                <template is="movie_item"></template>
+            </view>
         </view>
-        <template is="movie_item"></template>
-        <template is="movie_item"></template>
-        <template is="movie_item"></template>
     </view>
 </template>
