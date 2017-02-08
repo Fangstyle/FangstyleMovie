@@ -1,9 +1,9 @@
 <!--pages/movie/movie.wxml-->
 <import src="movie-template/movie-template.wxml" />
 <view>
-    <template is="movie_collection"></template>
-    <template is="movie_collection"></template>
-    <template is="movie_collection"></template>
+    <template is="movie_collection" data="{{...inTheaters}}"></template>
+    <template is="movie_collection" data="{{...comingSoon}}"></template>
+    <template is="movie_collection" data="{{...top250}}"></template>
 </view>
 
 

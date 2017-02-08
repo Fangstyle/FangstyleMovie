@@ -4,16 +4,21 @@
     <view class="movie-list-container">
         <view class="inner-container">
             <view class="movie-head">
-                <text class="slogan">正在热映</text>
+                <text class="slogan">{{mainTitle}}</text>
                 <view catchtap="onMoreTap" class="more" data-category="{{categoryTitle}}">
                     <text class="more-text">更多</text>
                     <image class="more-img" src="/images/icon/arrow-right.png"></image>
                 </view>
             </view>
             <view class="movies-container">
-                <template is="movie_item"></template>
-                <template is="movie_item"></template>
-                <template is="movie_item"></template>
+                <block wx:for="{{datalist}}" wx:for-item="movies">
+                    <template is="movie_item" data="{{...movies}}"></template>
+                   <!-- 遍历每一类 （top250 , 即将上映）的集合，动态添加，这里从服务器中取的是3个数据
+                   <template is="movie_item"></template>
+                    <template is="movie_item"></template>
+                    <template is="movie_item"></template>
+                    -->
+                </block>
             </view>
         </view>
     </view>
