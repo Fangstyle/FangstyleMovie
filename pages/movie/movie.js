@@ -6,6 +6,7 @@ Page({
     /*存储的数据格式
      *inTheaters: {
      *  mainTitle:即将上映的电影
+     *  categoryName: inTheaters
      *  movie:{
      *        stars: 45,
      *        title: 你的名字,
@@ -64,9 +65,16 @@ Page({
       var temporary = {};
       temporary[storageKey] ={
          mainTitle:Doubandata.title,/*电影列表页的标题头   eg：top250 即将上映*/
+         categoryName:storageKey, /*传入下一个页面的key  让更多页面加载知道要加载哪种数据*/
          datalist:movies
       }
       this.setData(temporary);
     }
+  },
+  toMoreMovie:function (event) {
+    var categoryName = event.currentTarget.dataset.moreMovie;
+    wx.navigateTo({
+      url: 'more-movie/more-movie'+'?categoryName='+categoryName
+    })
   }
 })

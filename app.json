@@ -1,9 +1,11 @@
 {
   "pages": [
     "pages/movie/movie",
+    "pages/movie/more-movie/more-movie",
     "pages/splash/splash",
     "pages/category/category",
     "pages/category/category-detail/category-detail"
+   
   ],
   "window": {
     "backgroundTextStyle": "light",

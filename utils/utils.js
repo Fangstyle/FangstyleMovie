@@ -17,6 +17,31 @@ function convertToStarsArray(stars) {
     return array;
 }
 
+function  httpGet(url,callback) {
+    wx.request({
+        url: url, //仅为示例，并非真实的接口地址
+        header: {
+            'content-type': ' '/**/
+        },
+        success: function(res) {
+            callback(res);
+        }
+    })
+}
+function httpPost(url,postparams,callback) {
+    wx.request({
+        url: url, //仅为示例，并非真实的接口地址
+        data: postparams,
+        header: {
+            'content-type': ' '/**/
+        },
+        success: function(res) {
+            callback(res);
+        }
+    })
+}
 module.exports = {
-    convertToStarsArray: convertToStarsArray
+    convertToStarsArray: convertToStarsArray,
+    httpGet:httpGet,
+    httpPost:httpPost
 }

@@ -6,7 +6,7 @@
             <view class="movie-head">
                 <text class="slogan">{{mainTitle}}</text>
                 <view catchtap="onMoreTap" class="more" data-category="{{categoryTitle}}">
-                    <text class="more-text">更多</text>
+                    <text class="more-text" bindtap="toMoreMovie" data-more-movie="{{categoryName}}">更多</text>
                     <image class="more-img" src="/images/icon/arrow-right.png"></image>
                 </view>
             </view>
