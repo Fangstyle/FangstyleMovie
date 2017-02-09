@@ -1,4 +1,9 @@
 <!--pages/movie/more-movie/more-movie.wxml-->
+<import src="../movie-item-template/movie-item-template.wxml"/>
 <view>
-    <template is="movie_item"></template>
+    <block wx:for="{{dataList}}" wx:for-item="item">
+        <view class="movie-item">
+            <template is="movie_item" data="{{...item}}"></template>
+        </view>
+    </block>
 </view>

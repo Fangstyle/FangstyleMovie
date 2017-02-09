@@ -2,7 +2,9 @@
 var appInstance = getApp();
 var utils = require('../../../utils/utils.js');
 Page({
-  data:{},
+  data:{
+    dataList:{}
+  },
   onLoad:function(options){
     var categoryName = options.categoryName; // 根据传入的类别  请求不同数据
     this.setData({
@@ -41,5 +43,25 @@ Page({
     utils.httpGet(dataUrl,self.storageMovieListData);
   },
   storageMovieListData:function (data) {
+    var movies = [];
+    for (var itemKey in data.data.subjects) {
+      var item = data.data.subjects[itemKey];
+      var title = item.title;
+      if (title.length >= 6) {
+        title = title.substring(0, 6) + "...";
+      }
+      // [1,1,1,1,1] -->5分 [1,1,1,2,0] -->3.5分
+      var temp = {
+        stars: utils.convertToStarsArray(item.rating.stars),
+        title: title,
+        average: item.rating.average,
+        coverageUrl: item.images.large,
+        movieId: item.id
+      };
+      movies.push(temp);
+    }
+    this.setData({
+      dataList : movies
+    });
   }
 });
