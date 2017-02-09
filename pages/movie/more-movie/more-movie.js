@@ -46,6 +46,7 @@ Page({
        requestUrl:dataUrl
     });
     utils.httpGet(dataUrl,self.storageMovieListData);
+    wx.showNavigationBarLoading(); //等待进度条 转圈圈
   },
   storageMovieListData:function (data) {
     var tempList = [];
@@ -71,18 +72,26 @@ Page({
       dataList : tempList,
       refreshMore:true
     });
+    wx.hideNavigationBarLoading();
   },
   loadMoreData:function () {
+    wx.showNavigationBarLoading(); //等待进度条 转圈圈
     var url = this.data.requestUrl+"?start="+(this.data.turgetPage)*20+"&count=20";
     utils.httpGet(url,this.storageMovieListData);
     console.log("加载更多");
   },
   refreshData:function () {
+    wx.showNavigationBarLoading();
     var url = this.data.requestUrl+"?start=0&count=20";
     this.setData({
       refreshMore:false
     });
     utils.httpGet(url,this.storageMovieListData);
     console.log("刷新");
-  }
+  },
+  onReady: function (event) {
+    wx.setNavigationBarTitle({
+      title: this.data.navigateTitle
+    })
+  },
 });
