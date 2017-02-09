@@ -1,5 +1,6 @@
 <!--pages/movie/more-movie/more-movie.wxml-->
 <import src="../movie-item-template/movie-item-template.wxml"/>
+<scroll-view scroll-y="true" style="height: 1435rpx;" bindscrolltoupper="refreshData" upper-threshold="50rpx" bindscrolltolower="loadMoreData">
 <view>
     <block wx:for="{{dataList}}" wx:for-item="item">
         <view class="movie-item">
@@ -7,3 +8,4 @@
         </view>
     </block>
 </view>
+</scroll-view>

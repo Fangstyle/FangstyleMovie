@@ -3,7 +3,9 @@ var appInstance = getApp();
 var utils = require('../../../utils/utils.js');
 Page({
   data:{
-    dataList:{}
+    dataList:{},
+    turgetPage:0,
+    refreshMore:false
   },
   onLoad:function(options){
     var categoryName = options.categoryName; // 根据传入的类别  请求不同数据
@@ -40,10 +42,13 @@ Page({
         dataUrl = appInstance.globalData.doubanBase + "/v2/movie/top250";
         break;
     }
+    this.setData({
+       requestUrl:dataUrl
+    });
     utils.httpGet(dataUrl,self.storageMovieListData);
   },
   storageMovieListData:function (data) {
-    var movies = [];
+    var tempList = [];
     for (var itemKey in data.data.subjects) {
       var item = data.data.subjects[itemKey];
       var title = item.title;
@@ -58,10 +63,26 @@ Page({
         coverageUrl: item.images.large,
         movieId: item.id
       };
-      movies.push(temp);
+      tempList.push(temp);
     }
+    tempList = this.data.refreshMore?this.data.dataList.concat(tempList):tempList;
     this.setData({
-      dataList : movies
+      turgetPage:this.data.turgetPage+1,
+      dataList : tempList,
+      refreshMore:true
     });
+  },
+  loadMoreData:function () {
+    var url = this.data.requestUrl+"?start="+(this.data.turgetPage)*20+"&count=20";
+    utils.httpGet(url,this.storageMovieListData);
+    console.log("加载更多");
+  },
+  refreshData:function () {
+    var url = this.data.requestUrl+"?start=0&count=20";
+    this.setData({
+      refreshMore:false
+    });
+    utils.httpGet(url,this.storageMovieListData);
+    console.log("刷新");
   }
 });
