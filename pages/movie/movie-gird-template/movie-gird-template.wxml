@@ -2,7 +2,7 @@
 <import src="../movie-item-template/movie-item-template.wxml"/>
 <template name="girdview-movie">
 <view class="girdview-container">
-    <block wx:for="{{girdList}}" wx:for-item="item">
+    <block wx:for="{{search}}" wx:for-item="item">
         <view class="movie-item">
             <template is="movie_item" data="{{...item}}"></template>
         </view>

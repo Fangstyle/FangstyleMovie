@@ -20,7 +20,8 @@ Page({
         inTheaters: {},
         comingSoon: {},
         top250: {},
-        searchPanelShow:false
+        searchPanelShow:false,
+        search:{}
     },
     onLoad: function (options) {
         // 页面初始化 options为页面跳转所带来的参数
@@ -83,7 +84,10 @@ Page({
             searchPanelShow: true
         })
     },
-    forSearch: function () {
+    forSearch: function (event) {
+        var searchContent = event.detail.value;
+        var searchUrl = appInstance.globalData.doubanBase+"/v2/movie/search?q="+searchContent;
+        this.getMovieData(searchUrl,"search");
     },
     onCancelImgTap:function () {
         this.setData({

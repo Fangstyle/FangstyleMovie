@@ -5,7 +5,7 @@
     <form bindsubmit="forSearch">
     <view class="search">
         <icon type="search" class="search-img" size="13" color="#405f80"></icon>
-        <input placeholder="君の名は。" placeholder-class="placeholder" bindfocus="onBindFocus"/>
+        <input placeholder="君の名は。" placeholder-class="placeholder" bindfocus="onBindFocus" bindconfirm="forSearch"/>
         <image wx:if="{{searchPanelShow}}" src="/images/icon/xx.png" class="xx-img" bindtap="onCancelImgTap"></image>
     </view>
     </form>
