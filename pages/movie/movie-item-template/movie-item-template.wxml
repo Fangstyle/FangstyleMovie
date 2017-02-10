@@ -1,7 +1,7 @@
 <!--pages/movie/movie-item-template/movie-item-template.wxml-->
 <import src="../star-template/star-template.wxml" />
 <template name="movie_item">
-<view class="movie-container" data-movieId="{{movieId}}">
+<view class="movie-container" data-movie-id="{{movieId}}" bindtap="toMovieDetail">
     <image class="movie-img" src="{{coverageUrl}}"></image>
     <text class="movie-title">{{title}}</text>
     <template is="movie_star" data="{{stars:stars, score: average}}"></template>

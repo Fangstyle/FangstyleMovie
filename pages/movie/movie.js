@@ -93,5 +93,11 @@ Page({
         this.setData({
             searchPanelShow: false
         })
+    },
+    toMovieDetail:function (event) {
+        var movieId = event.currentTarget.dataset.movieId;
+        wx.navigateTo({
+            url: 'movie-detail/movie-detail' + '?id=' + movieId
+        })
     }
 });

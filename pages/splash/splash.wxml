@@ -1,7 +1,14 @@
-<view class="container">
+<!--<view class="container">
     <image src="/images/head.png" class="head-icon"></image>
     <text class="spalsh-content">Hello,2017!</text>
     <view class ="start-border" bindtap="onEnters">
         <text class="spalsh-start">开启2017之旅</text>
+    </view>
+</view>-->
+<view class="container">
+    <image class="avatar" src="/images/head.png"></image>
+    <text class="motto">Hello, 七月</text>
+    <view class="journey-container" bindtap="onTap">
+        <text class="journey">开启小程序之旅</text>
     </view>
 </view>
