@@ -1,0 +1,62 @@
+<import src="../star-template/star-template.wxml" />
+<view class="container">
+    <image class="head-img" src="/images/movieImge.jpg" mode="aspectFill" />
+    <view class="head-img-hover" data-src="{{movie.movieImg}}" catchtap="viewMoviePostImg">
+        <text class="main-title">君の名は。</text>
+        <text class="sub-title">2016-11</text>
+        <view class="like">
+            <text class="highlight-font">
+                8
+            </text>
+            <text class="plain-font">
+                人喜欢
+            </text>
+            <text class="highlight-font">
+                10
+            </text>
+            <text class="plain-font">
+                条评论
+            </text>
+        </view>
+    </view>
+    <image class="movie-img" src="/images/movieImge.jpg" data-src="{{movie.movieImg}}" catchtap="viewMoviePostImg"/>
+    <view class="summary">
+        <view class="original-title">
+            <text>你的名字。</text>
+        </view>
+        <view class="flex-row">
+            <text class="mark">评分</text>
+            <template is="movie_star" data="{{stars:[1,1,1,1,2], score:8.5}}" />
+        </view>
+        <view class="flex-row">
+            <text class="mark">导演</text>
+            <text>宫崎骏</text>
+        </view>
+        <view class="flex-row">
+            <text class="mark">影人</text>
+            <text>{{movie.casts}}</text>
+        </view>
+        <view class="flex-row">
+            <text class="mark">类型</text>
+            <text>动漫，爱情</text>
+        </view>
+    </view>
+    <view class="hr"></view>
+    <view class="synopsis">
+        <text class="synopsis-font">剧情简介</text>
+        <text class="summary-content">在每千年回归一次的彗星造访过一个月之后，日本某个深山的乡下小镇。女高中生三叶每天都过着忧郁的生活，而她烦恼的不光有担任镇长的父亲所举行的选举运动，还有家传神社的古老习俗。在这个小小的城镇，周围都只是些爱瞎操心的老人。为此三叶对于大都市充满了憧憬。
+            然而某一天，自己做了一个变成男孩子的梦。这儿有着陌生的房间、陌生的朋友。而眼前出现的则是东京的街道。三叶虽然感到困惑，但是能够来到朝思暮想的都市生活，让她觉得神清气爽。另一方面在东京生活的男高中生立花泷也做了个奇怪的梦。他在一个从未去过的深山小镇中，变成了女高中生。两人就这样在梦中邂逅了彼此。</text>
+    </view>
+    <view class="hr"></view>
+    <view class="cast">
+        <text class="cast-font"> 影人</text>
+        <scroll-view class="cast-imgs" scroll-x="true" style="width:100%">
+            <block wx:for="{{movie.castsInfo}}" wx:for-item="item">
+                <view class="cast-container">
+                    <image class="cast-img" src="{{item.img}}"></image>
+                    <text class="cast-name">{{item.name}}</text>
+                </view>
+            </block>
+        </scroll-view>
+    </view>
+</view>

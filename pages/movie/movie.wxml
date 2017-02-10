@@ -14,7 +14,7 @@
     <template is="movie_collection" data="{{...top250}}"></template>
 </view>
 <view class="search-panel" wx:if="{{searchPanelShow}}">
-    <template is="girdview-movie"></template>
+    <template is="girdview-movie" data="{{...search}}"></template>
 </view>
 
 

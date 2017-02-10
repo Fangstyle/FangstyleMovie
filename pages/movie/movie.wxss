@@ -29,6 +29,7 @@
 .search-panel{
   position:absolute;
   top:80rpx;
+  background-color: #ffffff;
 }
 
 .xx-img{
