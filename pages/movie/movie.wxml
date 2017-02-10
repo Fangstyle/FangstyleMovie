@@ -1,9 +1,20 @@
 <!--pages/movie/movie.wxml-->
-<import src="movie-template/movie-template.wxml" />
+<import src="movie-template/movie-template.wxml"/>
+<import src="movie-gird-template/movie-gird-template.wxml"/>
 <view>
+    <form bindsubmit="forSearch">
+    <view class="search">
+        <icon type="search" class="search-img" size="13" color="#405f80"></icon>
+        <input placeholder="君の名は。" placeholder-class="placeholder" bindfocus="onBindFocus"/>
+        <image wx:if="{{searchPanelShow}}" src="/images/icon/xx.png" class="xx-img" bindtap="onCancelImgTap"></image>
+    </view>
+    </form>
     <template is="movie_collection" data="{{...inTheaters}}"></template>
     <template is="movie_collection" data="{{...comingSoon}}"></template>
     <template is="movie_collection" data="{{...top250}}"></template>
+</view>
+<view class="search-panel" wx:if="{{searchPanelShow}}">
+    <template is="girdview-movie"></template>
 </view>
 
 

@@ -1,0 +1,6 @@
+/* pages/movie/movie-gird-template/movie-gird-template.wxss */
+@import "../movie-item-template/movie-item-template.wxss";
+.movie-item{
+  float: left;
+  margin-bottom: 40rpx;
+}

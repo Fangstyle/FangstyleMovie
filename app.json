@@ -1,6 +1,6 @@
 {
   "pages": [
-     "pages/splash/splash",
+    "pages/splash/splash",
     "pages/movie/movie",
     "pages/movie/more-movie/more-movie",
     "pages/category/category",
