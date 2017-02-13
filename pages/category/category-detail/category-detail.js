@@ -55,6 +55,13 @@ Page({
             appInstance.globalData.g_isPlayingMusic = false;
             console.log("当前"+appInstance.globalData.g_isPlayingMusic);
         });
+        /*监听音乐播放完成。*/
+        wx.onBackgroundAudioStop(function(){
+             self.setData({
+                isPlayingMusic: false
+            })
+            appInstance.globalData.g_isPlayingMusic = false;
+        })
         }
     },
     data: {
